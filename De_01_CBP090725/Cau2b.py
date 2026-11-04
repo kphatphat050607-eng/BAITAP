@@ -1,18 +1,12 @@
+"""CAU 2b: Dem chu so trong doan chuoi tu vi tri x den y.
+Quy uoc x, y dem tu 1 va tinh ca hai dau mut.
 """
-CAU 2b: Dem so ky tu chu so trong doan chuoi tu vi tri x den y.
-
-Quy uoc: Vi tri trong de bai tinh tu 1; x va y deu duoc tinh.
-Vi du chuoi Python co chi so tu 0 nen can cat s[x - 1:y].
-"""
-
 s = input("Nhap chuoi s: ")
+n = len(s)
 
-# Neu chuoi rong thi khong co vi tri de chon.
-if len(s) == 0:
-    print("Chuoi rong, khong co ky tu nao de dem.")
+if n == 0:
+    print("Chuoi rong, khong co ky tu de dem.")
 else:
-    n = len(s)
-
     def nhap_vi_tri(thong_bao):
         while True:
             try:
@@ -22,33 +16,19 @@ else:
 
     x = nhap_vi_tri(f"Nhap vi tri x (1..{n}): ")
     y = nhap_vi_tri(f"Nhap vi tri y (1..{n}): ")
-
     while not (1 <= x <= y <= n):
-        print(f"Vi tri khong hop le. Can 1 <= x <= y <= {n}.")
+        print(f"Can thoa man 1 <= x <= y <= {n}.")
         x = nhap_vi_tri("Nhap lai x: ")
         y = nhap_vi_tri("Nhap lai y: ")
 
-    # Cat chuoi tu vi tri x den y (tinh theo cach dem tu 1).
-    doan = s[x - 1:y]
+    doan = s[x - 1:y]  # Vi tri de bai tu 1, chi so Python tu 0.
     dem = 0
-
     for ky_tu in doan:
         if ky_tu.isdigit():
             dem += 1
 
     print("Doan chuoi duoc chon:", doan)
-    print("So ky tu chu so trong doan:", dem)
+    print("So ky tu chu so:", dem)
 
-"""
-Vi du:
-s = "Python2026"
-x = 3, y = 8
-Doan chuoi: "thon20"
-So ky tu chu so: 2
-
-Ghi nho:
-- len(s): lay do dai chuoi.
-- s[a:b]: cat chuoi tu chi so a den truoc chi so b.
-- isdigit(): True neu ky tu la chu so.
-- Vi tri bat dau tu 1 nen chi so Python tuong ung la x - 1.
-"""
+# Vi du: s='Python2026', x=3, y=8 -> doan='thon20', co 2 chu so.
+# len() lay do dai; s[a:b] cat chuoi; isdigit() kiem tra chu so.
