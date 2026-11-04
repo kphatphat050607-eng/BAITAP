@@ -1,12 +1,7 @@
+"""CAU 1a: Nhap so thuc va kiem tra chan/le.
+Chan/le chi ap dung cho so nguyen. Gia tri 6.0 la so nguyen hop le,
+con 6.5 khong the ket luan la chan hay le.
 """
-DE SO 01 - CBP090725
-CAU 1a: Nhap so thuc x va kiem tra chan/le.
-
-Luu y: So chan va so le la khai niem chi ap dung cho so nguyen.
-Neu x la so thuc nhung co phan thap phan bang 0 (vi du 8.0),
-ta co the doi sang int de kiem tra. Neu x = 8.5 thi khong ket luan chan/le.
-"""
-
 while True:
     try:
         x = float(input("Nhap so thuc x: "))
@@ -14,27 +9,15 @@ while True:
     except ValueError:
         print("Du lieu khong hop le. Hay nhap mot gia tri so.")
 
-# is_integer() tra ve True neu gia tri float khong co phan le.
 if x.is_integer():
-    so_nguyen = int(x)
-
-    if so_nguyen % 2 == 0:
-        print(f"{so_nguyen} la so chan.")
+    n = int(x)
+    if n % 2 == 0:
+        print(f"{n} la so chan.")
     else:
-        print(f"{so_nguyen} la so le.")
+        print(f"{n} la so le.")
 else:
     print(f"{x} khong phai so nguyen nen khong xep loai chan/le.")
 
-"""
-Vi du:
-- Nhap 12       -> 12 la so chan.
-- Nhap -7       -> -7 la so le.
-- Nhap 6.0      -> 6 la so chan.
-- Nhap 4.5      -> khong xep loai chan/le.
-
-Ghi nho:
-- float(input(...)): nhap so thuc.
-- is_integer(): kiem tra gia tri float co phan thap phan bang 0.
-- int(x): ep kieu sang so nguyen.
-- % 2 == 0: so chan; % 2 != 0: so le.
-"""
+# Vi du: 12 -> chan; -7 -> le; 6.0 -> chan; 4.5 -> khong xep loai.
+# float(): chuyen du lieu sang so thuc; is_integer(): kiem tra phan le;
+# int(): ep sang so nguyen; % 2: kiem tra tinh chan/le.
