@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Camera Light Sensor</title><link rel="stylesheet" href="css/style.css"></head>
+<body><main class="container">
+<header><p class="eyebrow">COMPUTER VISION · BASIC PROJECT</p><h1>Cảm biến ánh sáng bằng Camera</h1><p class="subtitle">Sử dụng webcam để phân tích độ sáng hình ảnh theo thời gian thực.</p></header>
+<section class="dashboard">
+<article class="panel"><div class="panel-heading"><h2>Hình ảnh camera</h2><span id="cameraStatus" class="pill off">Chưa kết nối</span></div>
+<div class="video-wrap"><video id="video" autoplay playsinline muted></video><div id="placeholder" class="placeholder"><span class="camera-icon">◉</span><p>Nhấn “Bật camera” để bắt đầu</p></div></div>
+<div class="controls"><button id="startBtn" class="primary">Bật camera</button><button id="stopBtn" disabled>Tắt camera</button></div><p id="message" class="message" aria-live="polite">Trình duyệt sẽ yêu cầu quyền truy cập camera.</p></article>
+<article class="panel"><div class="panel-heading"><h2>Kết quả phân tích</h2><span class="live">● LIVE</span></div>
+<div class="reading"><strong id="brightnessValue">--</strong><span>/ 255 mức sáng</span></div><div class="meter"><div id="meterFill"></div></div><div class="scale"><span>0 – Tối</span><span>255 – Sáng</span></div>
+<div id="lightStatus" class="light-status neutral"><span id="statusIcon">◌</span><div><strong id="statusText">Chưa có dữ liệu</strong><p id="statusDescription">Bật camera để đo độ sáng.</p></div></div>
+<div class="thresholds"><h3>Ngưỡng phân loại</h3><p>🟠 Tối: dưới 80</p><p>🟢 Bình thường: từ 80 đến dưới 170</p><p>🟡 Sáng: từ 170 trở lên</p></div></article></section>
+<footer><p><strong>Lưu ý:</strong> Chỉ số 0–255 là độ sáng tương đối của pixel, không phải đơn vị lux.</p><p>HTML · CSS · JavaScript · Web Camera API · Canvas API</p></footer>
+</main><canvas id="analysisCanvas" hidden></canvas><script src="js/app.js"></script></body></html>
